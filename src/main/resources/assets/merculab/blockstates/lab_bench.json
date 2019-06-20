@@ -1,0 +1,57 @@
+{
+    "multipart": [
+        { "apply": { "model": "merculab:block/lab_bench_core" } },
+        {
+            "when":  { "north": "bench|full" },
+            "apply": { "model": "merculab:block/lab_bench_side" }
+        },
+        {
+            "when":  { "east": "bench|full" },
+            "apply": { "model": "merculab:block/lab_bench_side", "y": 90, "uvlock": true }
+        },
+        {
+            "when":  { "south": "bench|full" },
+            "apply": { "model": "merculab:block/lab_bench_side", "y": 180, "uvlock": true }
+        },
+        {
+            "when":  { "west": "bench|full" },
+            "apply": { "model": "merculab:block/lab_bench_side", "y": 270, "uvlock": true }
+        },
+        {
+            "when":  {
+                "OR": [
+                    { "north": "full", "west": "full|bench" },
+                    { "north": "full|bench", "west": "full" }
+                ]
+            },
+            "apply": { "model": "merculab:block/lab_bench_corner" }
+        },
+        {
+            "when":  {
+                "OR": [
+                    { "north": "full", "east": "full|bench" },
+                    { "north": "full|bench", "east": "full" }
+                ]
+            },
+            "apply": { "model": "merculab:block/lab_bench_corner", "y": 90, "uvlock": true }
+        },
+        {
+            "when":  {
+                "OR": [
+                    { "south": "full", "east": "full|bench" },
+                    { "south": "full|bench", "east": "full" }
+                ]
+            },
+            "apply": { "model": "merculab:block/lab_bench_corner", "y": 180, "uvlock": true }
+        },
+        {
+            "when":  {
+                "OR": [
+                    { "south": "full", "west": "full|bench" },
+                    { "south": "full|bench", "west": "full" }
+                ]
+            },
+            "apply": { "model": "merculab:block/lab_bench_corner", "y": 270, "uvlock": true }
+        }
+    ]
+}

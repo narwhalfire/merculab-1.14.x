@@ -1,0 +1,18 @@
+{
+    "textures": {
+        "particle": "merculab:block/lab_bench_top",
+        "side":     "merculab:block/lab_bench_side"
+    },
+    "elements": [
+        {
+            "from":  [ 1, 0, 0 ],
+            "to":    [ 15, 15, 1 ],
+            "faces": {
+                "down":  { "uv": [ 1, 15, 15, 16 ], "texture": "#side", "cullface": "down" },
+                "north": { "uv": [ 1, 1, 15, 16 ], "texture": "#side", "cullface": "north" },
+                "east":  { "uv": [ 0, 1, 1, 16 ], "texture": "#side" },
+                "west":  { "uv": [ 15, 1, 16, 16 ], "texture": "#side" }
+            }
+        }
+    ]
+}
