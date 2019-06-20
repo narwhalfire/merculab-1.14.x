@@ -9,9 +9,9 @@ import net.minecraftforge.common.extensions.IForgeBlock;
 
 import javax.annotation.Nullable;
 
-public class BlockJar extends Block implements IForgeBlock {
+public class JarBlock extends Block implements IForgeBlock {
 
-    public BlockJar(Properties properties) {
+    public JarBlock(Properties properties) {
         super(properties);
     }
 

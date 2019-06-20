@@ -4,14 +4,14 @@ import narwhalfire.merculab.init.MercuLab;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 
-public class TileEntityBeaker extends TileEntity {
+public class BeakerTileEntity extends TileEntity {
 
 
-    public TileEntityBeaker() {
+    public BeakerTileEntity() {
         this(MercuLab.TileEntityTypes.BEAKER);
     }
 
-    public TileEntityBeaker(TileEntityType<?> tileEntityTypeIn) {
+    public BeakerTileEntity(TileEntityType<?> tileEntityTypeIn) {
         super(tileEntityTypeIn);
     }
 }

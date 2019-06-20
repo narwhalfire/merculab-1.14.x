@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class BlockLabBench extends Block implements IForgeBlock {
+public class LabBenchBlock extends Block implements IForgeBlock {
 
     public static final EnumProperty<LabBenchSide> NORTH = BlockStateProperties.NORTH_BENCH;
     public static final EnumProperty<LabBenchSide> SOUTH = BlockStateProperties.SOUTH_BENCH;
@@ -42,7 +42,7 @@ public class BlockLabBench extends Block implements IForgeBlock {
     });
     protected final VoxelShape[] shapeParts;
 
-    public BlockLabBench(Block.Properties properties) {
+    public LabBenchBlock(Block.Properties properties) {
         super(properties);
         this.setDefaultState(this.getDefaultState()
                                  .with(NORTH, LabBenchSide.NULL)
@@ -140,7 +140,7 @@ public class BlockLabBench extends Block implements IForgeBlock {
     private LabBenchSide getAttachmentPref(IBlockReader blockReader, BlockPos blockPos, Direction direction) {
         BlockPos adjPos = blockPos.offset(direction);
         BlockState adjState = blockReader.getBlockState(adjPos);
-        if (adjState.getBlock() instanceof BlockLabBench) {
+        if (adjState.getBlock() instanceof LabBenchBlock) {
             return LabBenchSide.BENCH;
         }
         if (cannotAttach(adjState.getBlock())) {

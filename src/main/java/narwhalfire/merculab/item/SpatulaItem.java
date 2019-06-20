@@ -1,6 +1,6 @@
 package narwhalfire.merculab.item;
 
-public class ItemSpatula {
+public class SpatulaItem {
 
 
 }

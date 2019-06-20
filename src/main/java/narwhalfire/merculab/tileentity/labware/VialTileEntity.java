@@ -4,14 +4,15 @@ import narwhalfire.merculab.init.MercuLab;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 
-public class TileEntityJar extends TileEntity {
+public class VialTileEntity extends TileEntity {
 
 
-    public TileEntityJar() {
-        this(MercuLab.TileEntityTypes.JAR);
+    public VialTileEntity() {
+        this(MercuLab.TileEntityTypes.VIAL);
     }
 
-    public TileEntityJar(TileEntityType<?> tileEntityTypeIn) {
+    public VialTileEntity(TileEntityType<?> tileEntityTypeIn) {
         super(tileEntityTypeIn);
     }
+
 }

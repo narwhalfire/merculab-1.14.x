@@ -9,9 +9,9 @@ import net.minecraftforge.common.extensions.IForgeBlock;
 
 import javax.annotation.Nullable;
 
-public class BlockVial extends Block implements IForgeBlock {
+public class VialBlock extends Block implements IForgeBlock {
 
-    public BlockVial(Properties properties) {
+    public VialBlock(Properties properties) {
         super(properties);
     }
 

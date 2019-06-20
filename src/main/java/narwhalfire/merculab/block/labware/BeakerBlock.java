@@ -13,10 +13,10 @@ import net.minecraftforge.common.extensions.IForgeBlock;
 
 import javax.annotation.Nullable;
 
-public class BlockFlask extends Block implements IForgeBlock {
+public class BeakerBlock extends Block implements IForgeBlock {
     protected static final VoxelShape SHAPE = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 10.0, 12.0);
 
-    public BlockFlask(Properties properties) {
+    public BeakerBlock(Properties properties) {
         super(properties);
     }
 
@@ -28,11 +28,11 @@ public class BlockFlask extends Block implements IForgeBlock {
     @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return MercuLab.TileEntityTypes.FLASK.create();
+        return MercuLab.TileEntityTypes.BEAKER.create();
     }
 
     @Override
-    public VoxelShape getShape(BlockState p_220053_1_, IBlockReader p_220053_2_, BlockPos p_220053_3_, ISelectionContext p_220053_4_) {
+    public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
         return SHAPE;
     }
 
@@ -40,4 +40,5 @@ public class BlockFlask extends Block implements IForgeBlock {
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
+
 }

@@ -1,13 +1,13 @@
 package narwhalfire.merculab.init;
 
-import narwhalfire.merculab.block.chemical.BlockChemical;
+import narwhalfire.merculab.block.chemical.ChemicalBlock;
 import narwhalfire.merculab.block.labware.*;
 import narwhalfire.merculab.chemical.Chemical;
-import narwhalfire.merculab.item.chemical.ItemChemical;
-import narwhalfire.merculab.tileentity.labware.TileEntityBeaker;
-import narwhalfire.merculab.tileentity.labware.TileEntityFlask;
-import narwhalfire.merculab.tileentity.labware.TileEntityJar;
-import narwhalfire.merculab.tileentity.labware.TileEntityVial;
+import narwhalfire.merculab.item.chemical.ChemicalItem;
+import narwhalfire.merculab.tileentity.labware.BeakerTileEntity;
+import narwhalfire.merculab.tileentity.labware.FlaskTileEntity;
+import narwhalfire.merculab.tileentity.labware.JarTileEntity;
+import narwhalfire.merculab.tileentity.labware.VialTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.Enchantment;
@@ -308,12 +308,12 @@ public final class MercuLab {
         }
 
         static void init() {
-            make(new BlockBeaker(Block.Properties.create(Material.GLASS)), "beaker", insts);
-            make(new BlockFlask(Block.Properties.create(Material.GLASS)), "flask", insts);
-            make(new BlockJar(Block.Properties.create(Material.GLASS)), "jar", insts);
-            make(new BlockVial(Block.Properties.create(Material.GLASS)), "vial", insts);
-            make(new BlockLabBench(Block.Properties.create(Material.ROCK)), "lab_bench", insts);
-            Chemicals.blockInsts.forEach(chemical -> make(new BlockChemical(chemical, Block.Properties.create(Material.ROCK)),
+            make(new BeakerBlock(Block.Properties.create(Material.GLASS)), "beaker", insts);
+            make(new FlaskBlock(Block.Properties.create(Material.GLASS)), "flask", insts);
+            make(new JarBlock(Block.Properties.create(Material.GLASS)), "jar", insts);
+            make(new VialBlock(Block.Properties.create(Material.GLASS)), "vial", insts);
+            make(new LabBenchBlock(Block.Properties.create(Material.ROCK)), "lab_bench", insts);
+            Chemicals.blockInsts.forEach(chemical -> make(new ChemicalBlock(chemical, Block.Properties.create(Material.ROCK)),
                                                           chemical.getRegistryName().getPath() + "_block", insts));
         }
 
@@ -334,9 +334,9 @@ public final class MercuLab {
         static void init() {
             Blocks.insts.forEach(block -> make(new BlockItem(block, new Item.Properties()), block.getRegistryName()
                                                                                                  .getPath(), insts));
-            Chemicals.itemInsts.forEach(chemical -> make(new ItemChemical(chemical, new Item.Properties()), chemical.getRegistryName()
+            Chemicals.itemInsts.forEach(chemical -> make(new ChemicalItem(chemical, new Item.Properties()), chemical.getRegistryName()
                                                                                                                     .getPath(), insts));
-            Chemicals.blockInsts.forEach(chemical -> make(new ItemChemical(chemical, new Item.Properties()), chemical.getRegistryName()
+            Chemicals.blockInsts.forEach(chemical -> make(new ChemicalItem(chemical, new Item.Properties()), chemical.getRegistryName()
                                                                                                                      .getPath(), insts));
         }
 
@@ -395,10 +395,10 @@ public final class MercuLab {
         }
 
         static void init() {
-            make(TileEntityBeaker::new, "beaker", insts);
-            make(TileEntityFlask::new, "flask", insts);
-            make(TileEntityJar::new, "jar", insts);
-            make(TileEntityVial::new, "vial", insts);
+            make(BeakerTileEntity::new, "beaker", insts);
+            make(FlaskTileEntity::new, "flask", insts);
+            make(JarTileEntity::new, "jar", insts);
+            make(VialTileEntity::new, "vial", insts);
         }
 
         private static void make(Supplier<? extends TileEntity> s, String id, List<TileEntityType<?>> list) {
